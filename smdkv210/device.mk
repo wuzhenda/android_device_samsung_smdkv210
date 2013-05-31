@@ -8,7 +8,6 @@ PRODUCT_COMMON_DIR := device/samsung/common/s5p
 
 # Alan.Chu@BenQ.com, add android.hardware.wifi.xml for Wi-Fi Settings
 PRODUCT_COPY_FILES := \
-	frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
 	device/samsung/smdkv210/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
 	device/samsung/smdkv210/bcm4329.hcd:system/etc/bluetooth/bcm4329.hcd \
 	device/samsung/smdkv210/init.smdkv210.rc:root/init.smdkv210.rc \
@@ -36,26 +35,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
         hwui.render_dirty_regions=false \
-	dalvik.vm.dexopt-data-only=1 \
-	persist.sys.qmw.enabled=true \
-	persist.sys.qmw.max.min.enabled=true \
-	persist.sys.qmw.settop.enabled=true \
-	persist.sys.qmw.rem.app.config=false \
-	persist.sys.qmw.win.size=960,640,640,960 \
-	persist.sys.qmw.win.sizemin=320,240 \
-	persist.sys.qmw.win.pos=50,50 \
-	persist.sys.qmw.win.offset=40,40 \
-	persist.sys.qmw.win.hl.clr=4278212069 \
-	persist.sys.qmw.win.max.count=3 \
-	persist.sys.qmw.min.enabled=false \
-	persist.sys.qmw.auto.joint=true \
-	persist.sys.qmw.left.resize=true \
-	persist.sys.qmw.settop.count=1 \
-	persist.sys.qmw.win.icon=false \
-	persist.sys.qmw.app.name=false \
-	persist.sys.qmw.func.info=true \
-	persist.sys.qmw.auto.halfdiv=true \
-	persist.sys.qmw.realtime.resize=false
+	dalvik.vm.dexopt-data-only=1
 
 #for otapackage
 PRODUCT_COPY_FILES += \
@@ -132,7 +112,7 @@ PRODUCT_PACKAGES += \
 	make_ext4fs \
 	setup_fs
 
-$(call inherit-product, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
+#$(call inherit-product, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/samsung/smdkv210/device-vendor.mk)
 
 
@@ -154,9 +134,11 @@ PRODUCT_COPY_FILES += \
 ifeq ($(TARGET_R70_KERNEL_800_600),true)
   LOCAL_KERNEL := $(LOCAL_KERNEL_800_600)
 else ifeq ($(TARGET_R70_KERNEL_1280_720),true)
- LOCAL_KERNEL := $(LOCAL_KERNEL_1280_720)
+# LOCAL_KERNEL := $(LOCAL_KERNEL_1280_720)
+  LOCAL_KERNEL := $(LOCAL_KERNEL_800_600)
 else
- LOCAL_KERNEL := $(LOCAL_KERNEL_1280_1080)
+# LOCAL_KERNEL := $(LOCAL_KERNEL_1280_1080)
+  LOCAL_KERNEL := $(LOCAL_KERNEL_800_600)
 endif
 
  

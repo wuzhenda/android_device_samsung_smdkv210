@@ -13,6 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
+#define LOGI ALOGI
+#define LOGD ALOGD
+#define LOGE ALOGE
+#define LOGW ALOGW
+#define LOGV ALOGV
+
 
 #ifndef __SAMSUNG_SYSLSI_SEC_COMMON_H__
 #define __SAMSUNG_SYSLSI_SEC_COMMON_H__

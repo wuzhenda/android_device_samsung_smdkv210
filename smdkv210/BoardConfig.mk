@@ -28,6 +28,7 @@ TARGET_NO_RECOVERY := false
 TARGET_NO_RADIOIMAGE := true
 # TARGET_CPU_SMP := true
 TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_ARCH:= arm
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 BOARD_HAVE_BLUETOOTH := true
@@ -62,6 +63,7 @@ BOARD_CAMERA_LIBRARIES := libcamera
 endif
 
 S5P_BOARD_USES_HDMI := true
+#S5P_BOARD_USES_HDMI := false 
 ifeq ($(S5P_BOARD_USES_HDMI),true)
 BOARD_HDMI_STD := STD_1080P
 S5P_BOARD_USES_HDMI_SUBTITLES := false
@@ -96,7 +98,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/s3c-usbgadget/gadget/l
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
 # Add by Henry.Wu,for usbdevice to PC}
 
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT :=device/samsung/smdkv210/releasetools/ota_from_target_files
+#TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT :=device/samsung/smdkv210/releasetools/ota_from_target_files
 #add by Henry.Wu,for gen boot.img
 BOARD_KERNEL_BASE :=0x20000000
 BOARD_KERNEL_CMDLINE :=console=ttySAC0,115200 init=/init

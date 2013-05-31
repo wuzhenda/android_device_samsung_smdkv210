@@ -55,6 +55,12 @@
 
 #define MIN(x,y) (((x)<(y))?(x):(y))
 
+#define LOGD  ALOGD
+#define LOGW  ALOGW
+#define LOGE  ALOGE
+#define LOGI  ALOGI
+#define LOGV  ALOGV
+
 
 static int rfkill_id = -1;
 static char *rfkill_state_path = NULL;

@@ -109,8 +109,12 @@ mentioned in the Information are
 
 #define USEC_PER_SEC	1000000L
 
-//#define DEBUG_SENSOR
+#define DEBUG_SENSOR
 
+#define	LOGV  ALOGV
+#define	LOGD  ALOGD
+#define	LOGW  ALOGW
+#define	LOGE  ALOGE
 //Brian@BenQ 20110607 start
 
 /*****************************************************************************/
@@ -349,7 +353,7 @@ int s_device_open(const struct hw_module_t* module,
         dev->device.poll            = poll__poll;
         status = 0;
         dev->fd = open(SENSOR_DATA_DEVICE, O_RDONLY);
-        LOGE_IF(dev->fd<0, "Couldn't open %s (%s)", SENSOR_DATA_DEVICE, strerror(errno));
+        ALOGE_IF(dev->fd<0, "Couldn't open %s (%s)", SENSOR_DATA_DEVICE, strerror(errno));
 	 if(dev->fd < 0)
 	 	status = -EINVAL;
         *device = &dev->device.common;

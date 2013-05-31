@@ -19,6 +19,11 @@
 //#define LOG_NDEBUG 0
 #define LOG_TAG "CameraHardwareSec"
 //#define ALOGV LOGV
+#define LOGI ALOGI
+#define LOGD ALOGD
+#define LOGE ALOGE
+#define LOGW ALOGW
+#define LOGV ALOGV
 #include <utils/Log.h>
 
 #include "SecCameraHWInterface.h"
@@ -26,7 +31,8 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <camera/Camera.h>
-#include <media/stagefright/MetadataBufferType.h>
+//#include <media/stagefright/MetadataBufferType.h>
+#include <media/hardware/MetadataBufferType.h>
 
 #define VIDEO_COMMENT_MARKER_H          0xFFBE
 #define VIDEO_COMMENT_MARKER_L          0xFFBF
@@ -972,7 +978,7 @@ void CameraHardwareSec::save_postview(const char *fname, uint8_t *buf, uint32_t 
     uint32_t written = 0;
 
     LOGD("opening file [%s]\n", fname);
-    int fd = open(fname, O_RDWR | O_CREAT);
+    int fd = open(fname, O_RDWR | O_CREAT,0600);
     if (fd < 0) {
         LOGE("failed to create file [%s]: %s", fname, strerror(errno));
     return;

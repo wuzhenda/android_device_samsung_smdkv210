@@ -24,6 +24,11 @@
 //#define LOG_NDEBUG 0
 #define LOG_TAG "SecCamera"
 //#define ALOGV LOGV
+#define LOGI ALOGI
+#define LOGD ALOGD
+#define LOGE ALOGE
+#define LOGW ALOGW
+#define LOGV ALOGV
 #include <utils/Log.h>
 
 #include <math.h>
@@ -470,7 +475,7 @@ static int fimc_v4l2_s_ext_ctrl(int fp, unsigned int id, void *value)
     int ret;
 
     ctrl.id = id;
-    ctrl.reserved = value;
+    //ctrl.reserved = value;
 
     ctrls.ctrl_class = V4L2_CTRL_CLASS_CAMERA;
     ctrls.count = 1;

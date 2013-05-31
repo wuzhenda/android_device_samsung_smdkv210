@@ -26,6 +26,11 @@
 
 #include "SecHdmiClient.h"
 
+#define  LOGV  ALOGV
+#define  LOGD  ALOGD
+#define  LOGW  ALOGW
+#define  LOGE  ALOGE
+
 namespace android {
 
 static sp<ISecTVOut> g_SecTVOutService = 0;

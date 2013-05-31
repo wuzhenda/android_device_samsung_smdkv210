@@ -13,6 +13,10 @@
 #include "libcec.h"
 
 #define CEC_DEBUG 0
+#define LOGV  ALOGV
+#define LOGD  ALOGD
+#define LOGW  ALOGW
+#define LOGE  ALOGE
 
 
 /**

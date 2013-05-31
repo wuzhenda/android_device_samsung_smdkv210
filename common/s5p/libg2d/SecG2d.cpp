@@ -23,6 +23,12 @@
 
 #define LOG_NDEBUG 0
 #define LOG_TAG "SecG2d"
+#define LOGI ALOGI
+#define LOGD ALOGD
+#define LOGE ALOGE
+#define LOGW ALOGW
+#define LOGV ALOGV
+
 #include <utils/Log.h>
 
 #include "SecG2d.h"

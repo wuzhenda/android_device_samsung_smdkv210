@@ -101,10 +101,10 @@ LOCAL_SHARED_LIBRARIES := \
 	libcutils \
 	libutils \
 	libbinder \
-	libsurfaceflinger_client \
 	libui \
 	libTVOut
 
+#	libsurfaceflinger_client 
 ifeq ($(TARGET_SIMULATOR),true)
 ifeq ($(TARGET_OS),linux)
 ifeq ($(TARGET_ARCH),x86)

@@ -27,6 +27,12 @@
 
 #include "SecG2dC110.h"
 
+#define LOGI ALOGI
+#define LOGD ALOGD
+#define LOGE ALOGE
+#define LOGW ALOGW
+#define LOGV ALOGV
+
 namespace android
 {
 
