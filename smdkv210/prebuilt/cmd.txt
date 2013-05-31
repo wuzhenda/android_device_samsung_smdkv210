@@ -1,0 +1,1 @@
+mmc writestr 0 0x40000000 17466 region=zh_TW

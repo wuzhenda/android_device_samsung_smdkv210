@@ -1,0 +1,1 @@
+bootloader u-boot.bin system system.img system1 system.img boot boot.img boot1 boot.img scrub 
