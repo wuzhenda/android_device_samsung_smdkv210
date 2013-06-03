@@ -109,7 +109,7 @@ mentioned in the Information are
 
 #define USEC_PER_SEC	1000000L
 
-#define DEBUG_SENSOR
+//#define DEBUG_SENSOR
 
 #define	LOGV  ALOGV
 #define	LOGD  ALOGD
