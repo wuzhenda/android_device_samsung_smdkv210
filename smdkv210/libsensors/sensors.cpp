@@ -160,6 +160,7 @@ static struct sensor_t sensors_list[] = {
         resolution: 1.0, /* ???? */
         power: 20,      /* ???? */
         minDelay:5,
+        { }
     },
 #endif
 
@@ -370,7 +371,8 @@ static struct hw_module_methods_t s_module_methods = {
     open: s_device_open
 };
 
-extern "C" const struct sensors_module_t HAL_MODULE_INFO_SYM = {
+//extern "C" const struct sensors_module_t HAL_MODULE_INFO_SYM = {
+struct sensors_module_t HAL_MODULE_INFO_SYM = {
    common: {
        tag: HARDWARE_MODULE_TAG,
         version_major: 1,
@@ -379,10 +381,7 @@ extern "C" const struct sensors_module_t HAL_MODULE_INFO_SYM = {
         name: "sensor module",
         author: "Bosch",
         methods: &s_module_methods,
-     //   reserved: {},
-
     },
-
     get_sensors_list :s_get_sensors_list,
 };
 //Brian@BenQ 20110607 end
