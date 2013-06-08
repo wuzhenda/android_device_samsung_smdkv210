@@ -77,7 +77,8 @@ on fs
         chmod 0777 /internal_data/screensaver
 
 #+++ Alan.Chu@BenQ.com
-service wpa_supplicant /system/bin/wpa_supplicant -Dwext
+#service wpa_supplicant /system/bin/wpa_supplicant -Dwext
+service wpa_supplicant /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf -e/data/misc/wifi/entropy.bin
     class main
     socket wpa_wlan0 dgram 0660 wifi wifi
     disabled

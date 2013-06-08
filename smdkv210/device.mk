@@ -8,6 +8,7 @@ PRODUCT_COMMON_DIR := device/samsung/common/s5p
 
 # Alan.Chu@BenQ.com, add android.hardware.wifi.xml for Wi-Fi Settings
 PRODUCT_COPY_FILES := \
+	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
 	device/samsung/smdkv210/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
 	device/samsung/smdkv210/bcm4329.hcd:system/etc/bluetooth/bcm4329.hcd \
 	device/samsung/smdkv210/init.smdkv210.rc:root/init.smdkv210.rc \
@@ -134,11 +135,9 @@ PRODUCT_COPY_FILES += \
 ifeq ($(TARGET_R70_KERNEL_800_600),true)
   LOCAL_KERNEL := $(LOCAL_KERNEL_800_600)
 else ifeq ($(TARGET_R70_KERNEL_1280_720),true)
-# LOCAL_KERNEL := $(LOCAL_KERNEL_1280_720)
-  LOCAL_KERNEL := $(LOCAL_KERNEL_800_600)
+  LOCAL_KERNEL := $(LOCAL_KERNEL_1280_720)
 else
-# LOCAL_KERNEL := $(LOCAL_KERNEL_1280_1080)
-  LOCAL_KERNEL := $(LOCAL_KERNEL_800_600)
+  LOCAL_KERNEL := $(LOCAL_KERNEL_1280_1080)
 endif
 
  
