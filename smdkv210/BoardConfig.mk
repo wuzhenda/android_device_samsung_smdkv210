@@ -29,10 +29,14 @@ TARGET_NO_RADIOIMAGE := true
 # TARGET_CPU_SMP := true
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH:= arm
+TARGET_ARCH_VARIANT_CPU := cortex-a8
 ARCH_ARM_HAVE_TLS_REGISTER := true
+TARGET_GLOBAL_CFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
 
 BOARD_HAVE_SAMSUNG_WIFI := true
 
+TARGET_BOARD_PLATFORM_GPU := POWERVR_SGX540_120
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/smdkv210/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
