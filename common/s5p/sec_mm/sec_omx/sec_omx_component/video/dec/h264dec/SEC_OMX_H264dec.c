@@ -1055,7 +1055,7 @@ OMX_ERRORTYPE SEC_MFC_H264_Decode(OMX_COMPONENTTYPE *pOMXComponent, SEC_OMX_DATA
 
         if(status == MFC_GETOUTBUF_DECODING_ONLY) {
             if (((pInputData->nFlags & OMX_BUFFERFLAG_EOS) != OMX_BUFFERFLAG_EOS) &&
-                (pSECComponent->bSaveFlagEOS == OMX_TRUE)) {
+                ((pSECComponent->bSaveFlagEOS == OMX_TRUE) || (pSECComponent->getAllDelayBuffer == OMX_TRUE))) {
                 pInputData->nFlags |= OMX_BUFFERFLAG_EOS;
                 pSECComponent->getAllDelayBuffer = OMX_TRUE;
                 ret = OMX_ErrorInputDataDecodeYet;
@@ -1074,6 +1074,8 @@ OMX_ERRORTYPE SEC_MFC_H264_Decode(OMX_COMPONENTTYPE *pOMXComponent, SEC_OMX_DATA
         } else
 #endif
         if ((pInputData->nFlags & OMX_BUFFERFLAG_EOS) == OMX_BUFFERFLAG_EOS) {
+            //setConfVal = 1;
+            //SsbSipMfcDecSetConfig(pH264Dec->hMFCH264Handle.hMFCHandle, MFC_DEC_SETCONF_IS_LAST_FRAME, &setConfVal);
             pInputData->nFlags = (pOutputData->nFlags & (~OMX_BUFFERFLAG_EOS));
             pSECComponent->getAllDelayBuffer = OMX_TRUE;
             ret = OMX_ErrorInputDataDecodeYet;

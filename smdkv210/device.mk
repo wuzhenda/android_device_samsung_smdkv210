@@ -81,7 +81,8 @@ PRODUCT_PACKAGES += \
 # These is the OpenMAX IL configuration files
 PRODUCT_COPY_FILES += \
 	$(PRODUCT_COMMON_DIR)/sec_mm/sec_omx/sec_omx_core/secomxregistry:system/etc/secomxregistry \
-	$(PRODUCT_COMMON_DIR)/media_profiles.xml:system/etc/media_profiles.xml
+	$(PRODUCT_COMMON_DIR)/media_profiles.xml:system/etc/media_profiles.xml \
+	$(PRODUCT_COMMON_DIR)/media_codecs.xml:system/etc/media_codecs.xml
 
 #MFC Firmware
 PRODUCT_COPY_FILES += \
@@ -113,7 +114,7 @@ PRODUCT_PACKAGES += \
 	make_ext4fs \
 	setup_fs
 
-#$(call inherit-product, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/samsung/smdkv210/device-vendor.mk)
 
 

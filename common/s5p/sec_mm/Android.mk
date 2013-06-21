@@ -1,5 +1,4 @@
-#WITH_SEC_OMX := true
-WITH_SEC_OMX := false
+WITH_SEC_OMX := true
 
 ifeq ($(WITH_SEC_OMX), true)
   include $(all-subdir-makefiles)
